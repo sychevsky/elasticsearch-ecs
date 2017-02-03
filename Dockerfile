@@ -2,7 +2,7 @@ FROM elasticsearch:5.2
 
 WORKDIR /usr/share/elasticsearch
 
-RUN bin/plugin install cloud-aws && bin/plugin install mobz/elasticsearch-head && bin/plugin install repository-s3
+RUN bin/elasticsearch-plugin install cloud-aws && bin/elasticsearch-plugin install mobz/elasticsearch-head && bin/elasticsearch-plugin install repository-s3
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 COPY config/elasticsearch /etc/default/elasticsearch
